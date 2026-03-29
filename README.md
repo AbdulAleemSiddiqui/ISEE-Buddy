@@ -1,6 +1,6 @@
-# ISEE-Buddy
+# ISEE-Calcolo
 
-ISEE-Buddy is a responsive conversational web app built with React + TypeScript (Vite) to compute the Italian ISEE (Equivalent Economic Situation Indicator) with 2026 fiscal rules.
+ISEE-Calcolo is a responsive conversational web app built with React + TypeScript (Vite) to compute the Italian ISEE (Equivalent Economic Situation Indicator) with 2026 fiscal rules.
 
 ## Core objective
 

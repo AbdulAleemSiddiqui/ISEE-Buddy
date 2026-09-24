@@ -2,21 +2,28 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ISEEInput, ISEEResult, calculateISEE } from "@/lib/isee-calculator";
 import { getTranslations } from "@/lib/i18n";
-import { useSettings } from "@/contexts/SettingsContext";
 import { StepHousehold } from "./steps/StepHousehold";
 import { StepIncome } from "./steps/StepIncome";
 import { StepAssets } from "./steps/StepAssets";
 import { StepRealEstate } from "./steps/StepRealEstate";
 import { ISEEResults } from "./ISEEResults";
-import { SettingsPanel } from "./SettingsPanel";
-import { ArrowLeft, Calculator, Users, Wallet, Building2, Landmark } from "lucide-react";
+import { ArrowLeft, Calculator, Menu, Users, Wallet, Building2, Landmark } from "lucide-react";
 
 const STEP_ICONS = [Users, Wallet, Landmark, Building2, Calculator];
+
+const GUIDE_HREFS = [
+  { href: "/isee-2027", key: "isee2027" },
+  { href: "/calcolo-isee", key: "guideCalc" },
+  { href: "/documenti-isee", key: "guideDocs" },
+  { href: "/soglie-isee", key: "guideSoglie" },
+  { href: "/isee-corrente", key: "guideCorrente" },
+] as const;
 
 const defaultInput: ISEEInput = {
   adults: 1,
   minorChildren: 0,
   bothParentsWork: false,
+  hasChildUnder3: false,
   totalIncome: 0,
   annualRent: 0,
   bankBalances: 0,
@@ -27,12 +34,17 @@ const defaultInput: ISEEInput = {
 };
 
 export function ISEECalculator() {
-  const { language } = useSettings();
-  const t = getTranslations(language);
+  const t = getTranslations();
   const [step, setStep] = useState(0);
+  const [guidesOpen, setGuidesOpen] = useState(false);
   const [input, setInput] = useState<ISEEInput>(defaultInput);
   const [result, setResult] = useState<ISEEResult | null>(null);
   const [direction, setDirection] = useState(1);
+
+  const guides = GUIDE_HREFS.map(({ href, key }) => ({
+    href,
+    label: key === "isee2027" ? "ISEE 2027" : t[key as keyof typeof t] as string,
+  }));
 
   const stepLabels = [t.stepHousehold, t.stepIncome, t.stepAssets, t.stepRealEstate, t.stepResult];
 
@@ -79,13 +91,44 @@ export function ISEECalculator() {
               <p className="text-xs text-muted-foreground">{t.appSubtitle}</p>
             </div>
           </div>
+          <nav className="hidden md:flex items-center gap-5 text-sm" aria-label="Guide utili">
+            {guides.map((g) => (
+              <a key={g.href} href={g.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                {g.label}
+              </a>
+            ))}
+          </nav>
           <div className="flex items-center gap-2">
+            <div className="relative md:hidden">
+              <button
+                onClick={() => setGuidesOpen((o) => !o)}
+                aria-expanded={guidesOpen}
+                aria-haspopup="true"
+                aria-label={t.usefulGuides}
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+              {guidesOpen && (
+                <div className="absolute right-0 top-full mt-2 w-52 rounded-xl border border-border bg-card p-2 shadow-elevated z-20">
+                  {guides.map((g) => (
+                    <a
+                      key={g.href}
+                      href={g.href}
+                      onClick={() => setGuidesOpen(false)}
+                      className="block rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary transition-colors"
+                    >
+                      {g.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
             {step > 0 && step < 4 && (
               <button onClick={back} className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 <ArrowLeft className="h-4 w-4" /> {t.back}
               </button>
             )}
-            <SettingsPanel />
           </div>
         </div>
       </header>
@@ -107,7 +150,7 @@ export function ISEECalculator() {
         </div>
         <div className="mt-2 text-center">
           <span className="text-xs font-medium text-muted-foreground">
-            {stepLabels[step]} — {t.stepOf.replace("{current}", String(step + 1)).replace("{total}", String(stepLabels.length))}
+            {stepLabels[step]}: {t.stepOf.replace("{current}", String(step + 1)).replace("{total}", String(stepLabels.length))}
           </span>
         </div>
       </div>
@@ -133,6 +176,16 @@ export function ISEECalculator() {
       </main>
 
       <footer className="border-t border-border py-6 text-center">
+        <nav aria-label="Guide utili" className="mb-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">{t.usefulGuides}</p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm px-4">
+            {guides.map((g) => (
+              <a key={g.href} href={g.href} className="text-muted-foreground hover:text-foreground underline-offset-2 hover:underline">
+                {g.label}
+              </a>
+            ))}
+          </div>
+        </nav>
         <p className="text-xs text-muted-foreground max-w-md mx-auto px-4">
           {t.footerDisclaimer}
         </p>

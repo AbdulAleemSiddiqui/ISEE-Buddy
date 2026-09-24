@@ -1,6 +1,5 @@
 import { ISEEInput } from "@/lib/isee-calculator";
 import { getTranslations } from "@/lib/i18n";
-import { useSettings } from "@/contexts/SettingsContext";
 import { Building2, MapPin } from "lucide-react";
 
 interface Props {
@@ -23,8 +22,7 @@ function CurrencyInput({ label, value, onChange, hint }: { label: string; value:
 }
 
 export function StepRealEstate({ input, onChange, onNext }: Props) {
-  const { language } = useSettings();
-  const t = getTranslations(language);
+  const t = getTranslations();
 
   return (
     <div className="step-card step-card-active space-y-6">

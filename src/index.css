@@ -152,3 +152,9 @@
     background: var(--gradient-hero);
   }
 }
+
+/* Reserve the full viewport for the React app so the static SEO section below
+   never flashes at the top of the page before hydration. */
+#root {
+  min-height: 100vh;
+}

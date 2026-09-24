@@ -2,6 +2,7 @@ export interface ISEEInput {
   adults: number;
   minorChildren: number;
   bothParentsWork: boolean;
+  hasChildUnder3: boolean;
   totalIncome: number;
   annualRent: number;
   bankBalances: number;
@@ -40,10 +41,12 @@ export function calculateISEE(input: ISEEInput): ISEEResult {
   const clampedSize = Math.min(Math.max(householdSize, 1), 5);
   const baseScale = BASE_SCALES[clampedSize];
 
-  // Surcharges
-  const childSurcharge = input.minorChildren * 0.20;
-  const workSurcharge = input.bothParentsWork ? 0.30 : 0;
-  const surcharges = childSurcharge + workSurcharge;
+  // Surcharges: +0.2 for nuclei with minor children, raised to +0.3 when there
+  // is a child under 3 and the parent(s) worked at least 6 months in the
+  // reference year (Allegato 1, lett. b) DPCM 159/2013)
+  const childSurcharge =
+    input.minorChildren > 0 ? (input.hasChildUnder3 && input.bothParentsWork ? 0.3 : 0.2) : 0;
+  const surcharges = childSurcharge;
   const equivalenceScale = baseScale + surcharges;
 
   // ISR (Income)
@@ -55,7 +58,10 @@ export function calculateISEE(input: ISEEInput): ISEEResult {
   const govBondsExclusion = Math.min(input.govBondsAmount, 50000);
   const netBankBalances = Math.max(input.bankBalances - govBondsExclusion, 0);
   const extraMembers = Math.max(householdSize - 1, 0);
-  const movableFranchise = 6000 + (extraMembers * 2000);
+  // Franchise: 6.000 + 2.000 per member beyond the first, capped at 10.000,
+  // plus 1.000 for each child beyond the second (art. 5, comma 6, DPCM 159/2013)
+  const movableFranchise =
+    Math.min(6000 + extraMembers * 2000, 10000) + Math.max(input.minorChildren - 2, 0) * 1000;
   const ispMovable = Math.max(netBankBalances - movableFranchise, 0);
 
   // ISP - Real estate

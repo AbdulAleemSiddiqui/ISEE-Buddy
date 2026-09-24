@@ -2,7 +2,7 @@
 <html lang="it" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,13 +10,12 @@
     <!-- Primary SEO -->
     <title>Calcolatore ISEE 2026/2027 - isee-calcolo.com</title>
     <meta name="description" content="Calcola il tuo ISEE 2026/2027 gratuitamente. Strumento semplice e veloce per stimare l'Indicatore della Situazione Economica Equivalente." />
-    <meta name="keywords" content="calcolo ISEE, ISEE 2026, ISEE 2027, calcolatore ISEE, DSU, INPS, nucleo familiare" />
     <meta name="author" content="isee-calcolo.com" />
-    <link rel="canonical" href="https://isee-calcolo.com" />
+    <link rel="canonical" href="https://www.isee-calcolo.com/" />
 
     <!-- Open Graph (WhatsApp, Facebook, LinkedIn previews) -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://isee-calcolo.com" />
+    <meta property="og:url" content="https://www.isee-calcolo.com/" />
     <meta property="og:title" content="Calcolatore ISEE 2026/2027" />
     <meta property="og:description" content="Calcola il tuo ISEE 2026/2027 gratuitamente. Strumento semplice e veloce per stimare l'Indicatore della Situazione Economica Equivalente." />
     <meta property="og:locale" content="it_IT" />
@@ -30,7 +29,7 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Calcolatore ISEE 2026/2027",
-      "url": "https://isee-calcolo.com",
+      "url": "https://www.isee-calcolo.com/",
       "description": "Calcola il tuo ISEE 2026/2027 gratuitamente.",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "All",
@@ -42,8 +41,57 @@
       }
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "isee-calcolo.com",
+      "url": "https://www.isee-calcolo.com/",
+      "inLanguage": "it-IT"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cos'è l'ISEE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'ISEE (Indicatore della Situazione Economica Equivalente) è l'indicatore che misura la condizione economica di un nucleo familiare. Combina reddito e patrimonio (al 20%) e divide il risultato per la scala di equivalenza, che tiene conto del numero di componenti della famiglia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto costa calcolare l'ISEE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Presentare la DSU tramite il sito INPS con identità digitale (SPID, CIE o CNS) è gratuito. Questo strumento offre una stima gratuita e indicativa, senza sostituire la DSU ufficiale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto è valido l'ISEE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La DSU ha validità dal momento della presentazione fino al successivo 31 dicembre. Ogni anno, dal 1° gennaio, i dati della DSU si aggiornano automaticamente prendendo a riferimento il secondo anno solare precedente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quali documenti servono per l'ISEE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La DSU si compila interamente con autocertificazioni: il modello non richiede documenti allegati. Grazie alla DSU precompilata, molti dati (redditi, saldi bancari, fabbricati, canone di locazione) vengono acquisiti automaticamente."
+          }
+        }
+      ]
+    }
+    </script>
 
-    
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYSTR2HZEF"></script>
     <script>
@@ -56,5 +104,56 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Static SEO content: server-rendered text Google can index without executing JavaScript. -->
+    <section id="seo-intro" aria-label="Informazioni sull'ISEE" class="container mx-auto max-w-2xl px-4 pb-10 text-foreground">
+      <h2 class="font-display text-2xl md:text-3xl mb-3">Che cos'è l'ISEE e come funziona questo calcolatore</h2>
+      <p class="text-muted-foreground mb-3">
+        L'<strong>ISEE</strong> (Indicatore della Situazione Economica Equivalente) è il valore che determina l'accesso
+        a bonus e prestazioni sociali in Italia: assegno unico, bonus asilo nido, bonus sociali per le utenze energetiche
+        e molti altri. Il nostro <strong>calcolatore ISEE 2026/2027</strong> ti guida passo dopo passo tra reddito,
+        patrimonio mobiliare e immobiliare e ti restituisce una stima indicativa del tuo ISEE in pochi minuti, gratis.
+      </p>
+      <p class="text-muted-foreground mb-3">
+        La stima è puramente indicativa: per l'ISEE ufficiale occorre presentare la DSU tramite
+        <a href="https://www.inps.it" rel="noopener noreferrer" target="_blank" class="underline text-foreground">INPS</a>,
+        un CAF o il Comune. Su questo sito trovi anche guide aggiornate:
+        <a href="/isee-2027" class="underline text-foreground">ISEE 2027</a>,
+        <a href="/calcolo-isee" class="underline text-foreground">come si calcola l'ISEE</a>,
+        <a href="/documenti-isee" class="underline text-foreground">documenti per l'ISEE</a>,
+        <a href="/soglie-isee" class="underline text-foreground">soglie ISEE dei bonus</a> e
+        <a href="/isee-corrente" class="underline text-foreground">ISEE corrente</a>.
+      </p>
+
+      <h3 class="font-display text-xl md:text-2xl mt-6 mb-3">Domande frequenti</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-semibold">Cos'è l'ISEE?</h4>
+          <p class="text-sm text-muted-foreground">
+            L'ISEE misura la condizione economica del nucleo familiare: somma l'indicatore reddituale al 20% del patrimonio,
+            e divide il totale per la scala di equivalenza, che cresce con il numero dei componenti della famiglia.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Quanto costa calcolare l'ISEE?</h4>
+          <p class="text-sm text-muted-foreground">
+            Presentare la DSU sul sito INPS con SPID, CIE o CNS è gratuito; questo calcolatore è gratuito e offre solo una stima indicativa.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Quanto è valido l'ISEE?</h4>
+          <p class="text-sm text-muted-foreground">
+            La DSU è valida dalla presentazione fino al 31 dicembre successivo; ogni 1° gennaio i dati si aggiornano al secondo anno solare precedente.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Quali documenti servono per l'ISEE?</h4>
+          <p class="text-sm text-muted-foreground">
+            La DSU si compila con autocertificazioni, senza allegati; con la DSU precompilata molti dati arrivano automaticamente.
+            Vedi la nostra <a href="/documenti-isee" class="underline text-foreground">guida ai documenti per l'ISEE</a>.
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

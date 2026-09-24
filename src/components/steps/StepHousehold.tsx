@@ -1,6 +1,5 @@
 import { ISEEInput } from "@/lib/isee-calculator";
 import { getTranslations } from "@/lib/i18n";
-import { useSettings } from "@/contexts/SettingsContext";
 import { Users, Baby, Briefcase } from "lucide-react";
 
 interface Props {
@@ -31,8 +30,7 @@ function Counter({ value, onChange, min = 0, max = 10, label }: { value: number;
 }
 
 export function StepHousehold({ input, onChange, onNext }: Props) {
-  const { language } = useSettings();
-  const t = getTranslations(language);
+  const t = getTranslations();
 
   return (
     <div className="step-card step-card-active space-y-6">
@@ -51,16 +49,28 @@ export function StepHousehold({ input, onChange, onNext }: Props) {
         <Counter label={t.minorChildren} value={input.minorChildren} onChange={(v) => onChange({ minorChildren: v })} />
       </div>
 
-      {input.adults >= 2 && (
-        <div className="rounded-xl bg-secondary/60 p-4">
+      {input.minorChildren >= 1 && (
+        <div className="rounded-xl bg-secondary/60 p-4 space-y-4">
           <label className="flex items-center gap-3 cursor-pointer">
-            <input type="checkbox" checked={input.bothParentsWork} onChange={(e) => onChange({ bothParentsWork: e.target.checked })} className="h-5 w-5 rounded border-border accent-accent" />
+            <input type="checkbox" checked={input.hasChildUnder3} onChange={(e) => onChange({ hasChildUnder3: e.target.checked })} className="h-5 w-5 rounded border-border accent-accent" />
             <div className="flex items-center gap-2">
-              <Briefcase className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm font-medium text-foreground">{t.bothParentsWork}</span>
+              <Baby className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium text-foreground">{t.childUnder3}</span>
             </div>
           </label>
-          <p className="mt-1 ml-8 text-xs text-muted-foreground">{t.bothParentsWorkHint}</p>
+          <p className="mt-1 ml-8 text-xs text-muted-foreground">{t.childUnder3Hint}</p>
+          {input.hasChildUnder3 && (
+            <>
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" checked={input.bothParentsWork} onChange={(e) => onChange({ bothParentsWork: e.target.checked })} className="h-5 w-5 rounded border-border accent-accent" />
+                <div className="flex items-center gap-2">
+                  <Briefcase className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-sm font-medium text-foreground">{t.bothParentsWork}</span>
+                </div>
+              </label>
+              <p className="mt-1 ml-8 text-xs text-muted-foreground">{t.bothParentsWorkHint}</p>
+            </>
+          )}
         </div>
       )}
 

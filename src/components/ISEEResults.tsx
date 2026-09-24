@@ -1,6 +1,5 @@
 import { ISEEResult } from "@/lib/isee-calculator";
 import { getTranslations } from "@/lib/i18n";
-import { useSettings } from "@/contexts/SettingsContext";
 import { motion } from "framer-motion";
 import { RotateCcw, Info, TrendingDown, Scale, Building2, Landmark } from "lucide-react";
 
@@ -26,8 +25,7 @@ function DetailRow({ label, value, icon }: { label: string; value: string; icon?
 }
 
 export function ISEEResults({ result, onRestart }: Props) {
-  const { language } = useSettings();
-  const t = getTranslations(language);
+  const t = getTranslations();
 
   return (
     <div className="space-y-6">

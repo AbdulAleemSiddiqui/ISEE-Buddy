@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="/src/index.css" />
+    <title>Come si calcola l'ISEE: formula, scala di equivalenza ed esempio - isee-calcolo.com</title>
+    <meta name="description" content="La formula dell'ISEE spiegata in modo semplice: reddito, patrimonio al 20%, scala di equivalenza e maggiorazioni, con un esempio di calcolo completo e le fonti ufficiali." />
+    <link rel="canonical" href="https://www.isee-calcolo.com/calcolo-isee" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.isee-calcolo.com/calcolo-isee" />
+    <meta property="og:title" content="Come si calcola l'ISEE: formula e scala di equivalenza" />
+    <meta property="og:description" content="La formula dell'ISEE spiegata in modo semplice, con esempio di calcolo completo e fonti ufficiali." />
+    <meta property="og:locale" content="it_IT" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Come si calcola l'ISEE: formula, scala di equivalenza ed esempio",
+      "url": "https://www.isee-calcolo.com/calcolo-isee",
+      "inLanguage": "it-IT",
+      "isPartOf": { "@type": "WebSite", "name": "2026/2027", "url": "https://www.isee-calcolo.com/" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.isee-calcolo.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Come si calcola l'ISEE", "item": "https://www.isee-calcolo.com/calcolo-isee" }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Il patrimonio conta molto nell'ISEE?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No: il patrimonio entra nel calcolo solo al 20%, e solo per la parte che supera le franchigie. Per molte famiglie che vivono in casa di proprietà con un mutuo, l'abitazione principale conta zero o quasi." }
+        },
+        {
+          "@type": "Question",
+          "name": "I conti correnti come vengono considerati?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Per ogni conto si considera il valore più alto tra il saldo al 31 dicembre e la giacenza media annua dell'anno di riferimento. Le carte prepagate con IBAN sono considerate conti." }
+        },
+        {
+          "@type": "Question",
+          "name": "Le auto entrano nell'ISEE?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nella DSU vanno dichiarate le targhe di auto, moto di cilindrata uguale o superiore a 500 cc e imbarcazioni, ma il loro valore non entra nel calcolo del patrimonio ai fini dell'ISEE ordinario." }
+        }
+      ]
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYSTR2HZEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GYSTR2HZEF');
+    </script>
+  </head>
+  <body class="bg-background text-foreground font-body antialiased">
+    <header class="border-b border-border bg-card">
+      <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-3 md:px-8">
+        <a href="/" class="flex items-center gap-3 shrink-0">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/></svg></div>
+          <div>
+            <p class="font-display text-lg leading-tight">Calcolatore ISEE</p>
+            <p class="text-xs text-muted-foreground">2026/2027</p>
+          </div>
+        </a>
+        <nav aria-label="Guide" class="hidden md:flex items-center gap-5 text-sm">
+          <a data-i18n="g1" href="/isee-2027" class="text-muted-foreground hover:text-foreground hover:underline">ISEE 2027</a>
+          <span aria-current="page" class="font-semibold text-foreground">Calcolo ISEE</span>
+          <a data-i18n="g3" href="/documenti-isee" class="text-muted-foreground hover:text-foreground hover:underline">Documenti ISEE</a>
+          <a data-i18n="g4" href="/soglie-isee" class="text-muted-foreground hover:text-foreground hover:underline">Soglie ISEE</a>
+          <a data-i18n="g5" href="/isee-corrente" class="text-muted-foreground hover:text-foreground hover:underline">ISEE corrente</a>
+        </nav>
+        <details class="relative md:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-xl border border-border text-muted-foreground" aria-label="Apri il menu" style="list-style:none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </summary>
+        <nav aria-label="Guide" class="absolute right-0 top-full mt-2 w-52 rounded-xl border border-border bg-card p-2 shadow-lg z-20">
+          <a href="/isee-2027" class="block rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary">ISEE 2027</a>
+          <span aria-current="page" class="block rounded-lg px-3 py-2 text-sm font-semibold text-foreground">Calcolo ISEE</span>
+          <a href="/documenti-isee" class="block rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary">Documenti ISEE</a>
+          <a href="/soglie-isee" class="block rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary">Soglie ISEE</a>
+          <a href="/isee-corrente" class="block rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary">ISEE corrente</a>
+        </nav>
+      </details>
+      <a data-i18n="cta" href="/" class="hidden md:inline-block shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90">Calcola il tuo ISEE</a>
+      </div>
+    </header>
+
+    <nav aria-label="Breadcrumb" class="container mx-auto max-w-3xl px-4 pt-6 text-sm text-muted-foreground">
+      <ol class="flex gap-2">
+        <li><a href="/" class="hover:underline">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-foreground">Come si calcola l'ISEE</li>
+      </ol>
+    </nav>
+
+    <main class="container mx-auto max-w-3xl px-4 py-8">
+      <article>
+        <h1 class="font-display text-3xl md:text-4xl leading-tight mb-2">Come si calcola l'ISEE: la formula spiegata semplice</h1>
+        <p class="text-sm text-muted-foreground mb-8">Aggiornato: settembre 2026 · Fonti ufficiali indicate in fondo alla pagina</p>
+
+        <p class="mb-4">
+          L'ISEE (Indicatore della Situazione Economica Equivalente) si calcola con una formula precisa, definita dal
+          <strong>DPCM 5 dicembre 2013, n. 159</strong>. In sintesi:
+        </p>
+        <div class="rounded-xl border border-border bg-card p-5 text-center mb-6">
+          <p class="font-display text-xl md:text-2xl">ISEE = ISE ÷ scala di equivalenza</p>
+          <p class="text-sm text-muted-foreground mt-2">dove ISE = indicatore reddituale + 20% × indicatore patrimoniale</p>
+        </div>
+
+        <h2 class="font-display text-2xl mt-8 mb-3">1. L'indicatore reddituale (ISR)</h2>
+        <p class="mb-4">
+          È la somma dei redditi di tutti i componenti del nucleo familiare, con riferimento al <strong>secondo anno
+          solare precedente</strong> la presentazione della DSU: per una DSU presentata nel 2026 valgono i redditi 2024.
+          Dal reddito complessivo si sottrae il canone di affitto (o il rapporto di usufrutto) dell'abitazione principale,
+          fino al tetto massimo previsto dalla normativa.
+        </p>
+
+        <h2 class="font-display text-2xl mt-8 mb-3">2. L'indicatore patrimoniale (ISP)</h2>
+        <p class="mb-4">
+          Somma il patrimonio <strong>mobiliare</strong> (saldi dei conti bancari e postali, di cui si considera il più alto tra
+          saldo al 31 dicembre e giacenza media annua, titoli, azioni, polizze riscattabili) e quello
+          <strong>immobiliare</strong> (valore ai fini IMU degli immobili, al netto del capitale residuo dei mutui).
+          Nel calcolo entrano solo le franchigie superate:
+        </p>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li><strong>Patrimonio mobiliare</strong>: franchigia di <strong>6.000 €</strong>, aumentata di <strong>2.000 € per ogni componente</strong> oltre il primo (con un tetto di <strong>10.000 €</strong>) e di <strong>1.000 € per ogni figlio</strong> a partire dal terzo. Dal 3 aprile 2025 i titoli di Stato, i buoni fruttiferi postali e i libretti di risparmio postali sono esclusi dal calcolo <strong>fino a 50.000 € per nucleo</strong>.</li>
+          <li><strong>Abitazione principale (ISEE ordinario)</strong>: se vale fino a <strong>52.500 €</strong> non conta nulla; sopra questa soglia conta <strong>due terzi dell'eccedenza</strong> (aumentata di 2.500 € per ogni figlio convivente oltre il secondo). Gli altri immobili contano per intero, al netto dei mutui.</li>
+          <li><strong>Abitazione principale (nuovo ISEE "famigliare")</strong>: per le prestazioni familiari e di inclusione (assegno unico, ADI, SFL, bonus nido, bonus nuovi nati) la franchigia è salita a <strong>91.500 €</strong>, o <strong>120.000 €</strong> per i residenti nei capoluoghi di città metropolitana, con 2.500 € in più per ogni figlio convivente oltre il primo.</li>
+        </ul>
+        <p class="mb-4 text-sm text-muted-foreground">
+          Su alcune tipologie di attività finanziarie (diversi dai conti correnti) si applica inoltre il
+          <em>reddito figurativo</em>, cioè un rendimento presunto calcolato applicando il tasso di rendimento medio annuo
+          dei titoli decennali del Tesoro (o, se più basso, il tasso di interesse legale maggiorato di un punto).
+        </p>
+
+        <h2 class="font-display text-2xl mt-8 mb-3">3. La scala di equivalenza</h2>
+        <p class="mb-4">
+          Il parametro <strong>ISE</strong> viene diviso per la scala di equivalenza: più la famiglia è numerosa, più alto
+          è il divisorio e più basso risulta l'ISEE. I valori base (Allegato 1 del DPCM 159/2013):
+        </p>
+        <div class="overflow-x-auto rounded-xl border border-border bg-card mb-4">
+          <table class="w-full text-sm">
+            <thead class="bg-secondary/60 text-left">
+              <tr><th class="px-4 py-3 font-semibold">Componenti del nucleo</th><th class="px-4 py-3 font-semibold">Scala di equivalenza</th></tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr><td class="px-4 py-3">1</td><td class="px-4 py-3">1,00</td></tr>
+              <tr><td class="px-4 py-3">2</td><td class="px-4 py-3">1,57</td></tr>
+              <tr><td class="px-4 py-3">3</td><td class="px-4 py-3">2,04</td></tr>
+              <tr><td class="px-4 py-3">4</td><td class="px-4 py-3">2,46</td></tr>
+              <tr><td class="px-4 py-3">5</td><td class="px-4 py-3">2,85</td></tr>
+              <tr><td class="px-4 py-3">per ogni componente oltre il quinto</td><td class="px-4 py-3">+0,35</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mb-4">Alla scala base si aggiungono le maggiorazioni previste dalla normativa:</p>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li><strong>+0,2</strong> per i nuclei con figli minorenni (o minori di 18 anni);</li>
+          <li><strong>+0,3</strong> invece di +0,2 se nel nucleo c'è un figlio di età inferiore a 3 anni ed entrambi i genitori (o il genitore solo) hanno svolto attività lavorativa per almeno 6 mesi nell'anno di riferimento;</li>
+          <li><strong>+0,5</strong> per ogni componente con disabilità (media, grave o non autosufficiente).</li>
+        </ul>
+        <p class="mb-4 text-sm text-muted-foreground">
+          Per l'ISEE delle prestazioni familiari e di inclusione, dal 2026 la maggiorazione per i nuclei con più figli è
+          rideterminata: +0,10 con 2 figli, +0,25 con 3, +0,40 con 4, +0,55 con 5 o più (Legge di Bilancio 2026, art. 1, c. 208).
+        </p>
+
+        <h2 class="font-display text-2xl mt-8 mb-3">Esempio di calcolo (semplificato)</h2>
+        <p class="mb-4">Coppia con un figlio, redditi complessivi 24.000 €, conti e titoli per 30.000 €, casa di proprietà valore IMU 150.000 € con 80.000 € di mutuo residuo, residenti in un capoluogo metropolitano, per l'ISEE familiare:</p>
+        <ol class="list-decimal pl-6 mb-4 space-y-2">
+          <li>Patrimonio mobiliare franchigiato: 30.000 − 10.000 (franchigia massima) = <strong>20.000 €</strong></li>
+          <li>Patrimonio immobiliare netto: 150.000 − 80.000 = 70.000 €, sotto la franchigia di 120.000 € → <strong>0 €</strong></li>
+          <li>ISP = 20.000 € → ISE = 24.000 + 20% × 20.000 = <strong>28.000 €</strong></li>
+          <li>Scala di equivalenza: nucleo di 3 = 2,04, +0,2 (figlio minorenne) = <strong>2,24</strong></li>
+          <li>ISEE ≈ 28.000 ÷ 2,24 ≈ <strong>12.500 €</strong></li>
+        </ol>
+
+        <div class="my-10 rounded-2xl bg-gradient-to-br from-primary to-primary/80 p-6 text-primary-foreground md:p-8">
+          <h2 class="font-display text-2xl mb-2">Non vuoi fare i conti a mano?</h2>
+          <p class="mb-4 opacity-90">Il nostro calcolatore gratuito applica la formula al tuo caso in pochi minuti, con una stima indicativa e senza registrazione.</p>
+          <a data-i18n="ctaHero" href="/" class="inline-block rounded-lg bg-primary-foreground px-6 py-3 font-semibold text-primary hover:opacity-90">Calcola il tuo ISEE gratis →</a>
+        </div>
+
+        <h2 class="font-display text-2xl mt-8 mb-3">Domande frequenti</h2>
+        <div class="space-y-5 mb-10">
+          <div>
+            <h3 class="font-semibold">Il patrimonio conta molto nell'ISEE?</h3>
+            <p class="text-muted-foreground">No: il patrimonio entra nel calcolo solo al 20%, e solo per la parte che supera le franchigie. Per molte famiglie che vivono in casa di proprietà con un mutuo, l'abitazione principale conta zero o quasi.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">I conti correnti come vengono considerati?</h3>
+            <p class="text-muted-foreground">Per ogni conto si considera il valore più alto tra il saldo al 31 dicembre e la giacenza media annua dell'anno di riferimento. Le carte prepagate con IBAN sono considerate conti.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Le auto entrano nell'ISEE?</h3>
+            <p class="text-muted-foreground">Nella DSU vanno dichiarate le targhe di auto, moto di cilindrata uguale o superiore a 500 cc e imbarcazioni, ma il loro valore non entra nel calcolo del patrimonio ai fini dell'ISEE ordinario.</p>
+          </div>
+        </div>
+      </article>
+
+      <section aria-label="Fonti ufficiali" class="rounded-xl border border-border bg-card p-6 mb-10">
+        <h2 class="font-display text-xl mb-3">Fonti ufficiali</h2>
+        <ul class="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+          <li><a class="underline" href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.presidente.del.consiglio.dei.ministri:2013-12-05;159!vig=" rel="noopener noreferrer" target="_blank">DPCM 5 dicembre 2013, n. 159, testo vigente (Normattiva)</a>: artt. 2, 4 e 5, Allegato 1</li>
+          <li><a class="underline" href="https://www.lavoro.gov.it/strumenti-e-servizi/faq-isee-2025" rel="noopener noreferrer" target="_blank">Ministero del Lavoro, FAQ ISEE (esclusione titoli di Stato fino a 50.000 €)</a></li>
+          <li><a class="underline" href="https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.01.nuovi-criteri-isee-per-l-inclusione-sociale-aggiornamento-procedure.html" rel="noopener noreferrer" target="_blank">INPS, Nuovi criteri ISEE per l'inclusione sociale (gennaio 2026)</a></li>
+          <li><a class="underline" href="https://www.lavoro.gov.it/strumenti-e-servizi/isee-istruzioni-2026" rel="noopener noreferrer" target="_blank">Ministero del Lavoro, Istruzioni per la compilazione della DSU 2026</a></li>
+        </ul>
+      </section>
+
+      <section aria-label="Guide correlate" class="mb-12">
+        <h2 class="font-display text-xl mb-3">Guide correlate</h2>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <a href="/isee-2027" class="rounded-xl border border-border bg-card p-4 hover:border-primary">ISEE 2027: redditi e scadenze</a>
+          <a href="/documenti-isee" class="rounded-xl border border-border bg-card p-4 hover:border-primary">Documenti per l'ISEE</a>
+          <a href="/soglie-isee" class="rounded-xl border border-border bg-card p-4 hover:border-primary">Soglie ISEE dei bonus</a>
+          <a href="/isee-corrente" class="rounded-xl border border-border bg-card p-4 hover:border-primary">ISEE corrente</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-border py-6">
+      <p data-i18n="foot" class="mx-auto max-w-md px-4 text-center text-xs text-muted-foreground">
+        Le informazioni di questo sito hanno scopo puramente informativo e non sostituiscono la DSU ufficiale né il parere di un CAF o di un professionista. Per l'ISEE valido ai fini legali presenta la DSU tramite INPS, CAF o Comune.
+      </p>
+    </footer>
+  </body>
+</html>
